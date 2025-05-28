@@ -1,4 +1,4 @@
-module github.com/tenny1225/rk-entry/v2
+module github.com/rookie-ninja/rk-entry/v2
 
 go 1.18
 
