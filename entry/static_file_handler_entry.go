@@ -10,7 +10,6 @@ import (
 	"context"
 	"encoding/base64"
 	"encoding/json"
-	"fmt"
 	"github.com/rookie-ninja/rk-entry/v2"
 	rkmid "github.com/rookie-ninja/rk-entry/v2/middleware"
 	"html/template"
@@ -262,8 +261,8 @@ func (entry *StaticFileHandlerEntry) GetFileHandler() http.HandlerFunc {
 			writer.Write(buf.Bytes())
 		} else {
 			// make browser download file
-			writer.Header().Set("Content-Disposition", fmt.Sprintf("attachment; filename=%s", fileInfo.Name()))
-			writer.Header().Set("Content-Type", "application/octet-stream")
+			//writer.Header().Set("Content-Disposition", fmt.Sprintf("attachment; filename=%s", fileInfo.Name()))
+			//writer.Header().Set("Content-Type", "application/octet-stream")
 			http.ServeContent(writer, request, filepath.Base(p), time.Now(), file)
 		}
 	}
